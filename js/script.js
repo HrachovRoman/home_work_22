@@ -1,5 +1,5 @@
-function funcPalindrome(num, count = 0) {
-     
+function funcPalindrome(num, stepsCount = 0) {
+   
     let str = num.toString();
   
     let strReverse = str.split("").reverse().join("");
@@ -7,10 +7,10 @@ function funcPalindrome(num, count = 0) {
     if (str === strReverse) {
       return {
         result: num,
-        steps: count,
+        steps: stepsCount,
       };
     }
-    return funcPalindrome(num + (+strReverse), count + 1);
+    return funcPalindrome(num + (+strReverse), stepsCount + 1);
   }
   
   console.log(funcPalindrome(96)); // {result: 4884, steps: 4}
